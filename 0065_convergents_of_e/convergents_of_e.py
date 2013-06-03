@@ -3,12 +3,19 @@
 #
 #number e can be expressed as infinite continued fraction (http://en.wikipedia.org/wiki/Continued_fraction):
 #e = [2; 1,2,1, 1,4,1, 1,6,1 , ... , 1,2k,1, ...]
-#so, for k = 0, e ~= 2
-#k = 1, e ~= 3
-#k = 2, e ~= 8/3
-#k = 3, e ~= 11/4
+#so, for 1st convergent, e ~= 2
+#2nd convergent, e ~= 3
+#3rd convergent, e ~= 8/3
+#4th convergent, e ~= 11/4
 #and so on
 #
 #find the numerator of 100th convergent, and sum up those digits
 #
 #Ian Ruotsala, 2013, June, 3rd
+
+N_CONV = 100 #use 100th convergent
+
+def main():
+	
+
+main()
