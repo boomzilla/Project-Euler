@@ -15,7 +15,23 @@
 
 N_CONV = 100 #use 100th convergent
 
+def find_numerator():
+	numerator = 2
+	denominator = 1
+
+	for n in range(1, N_CONV+1):
+		#add 1/denom_to_add to the fraction,
+		#where denom_to_add progresses as 1,2,1,1,4,1, ..., 1,2k,1
+		denom_to_add = 1
+		if ((n+1) % 3 == 0):
+			denom_to_add = (n+1)*2/3
+		result = sum_fractions(numerator, demoninator, 1, denom_to_add)
+		#simplify fraction		
+
+	return numerator
+
 def main():
-	
+	numerator = find_numerator() #find numerator of Nth convergent
+	#sum digits of numerator
 
 main()
