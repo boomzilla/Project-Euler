@@ -15,6 +15,13 @@
 
 N_CONV = 100 #use 100th convergent
 
+def find_gcd(a, b):
+	while (b != 0):
+		t = b
+		b = a % t
+		a = t
+	return a
+
 def find_numerator():
 	numerator = 2
 	denominator = 1
@@ -25,12 +32,19 @@ def find_numerator():
 		denom_to_add = 1
 		if ((n+1) % 3 == 0):
 			denom_to_add = (n+1)*2/3
-		result = sum_fractions(numerator, demoninator, 1, denom_to_add)
+		result = sum_fractions(numerator, denominator, 1, denom_to_add)
 		#now simplify fraction		
 		gcd = find_gcd(result[0], result[1])
 		numerator = result[0]/gcd
 		denominator = result[1]/gcd
 	return numerator
+
+def get_sum_of_digits(number):
+	result = number % 10
+	while (number / 10 != 0):
+		result /= 10
+		result += number % 10
+	return result
 
 def sum_fractions(numer_l, denom_l, numer_r, denom_r):
 	#sum two fractions, return resultant numerator and denominator as a list of two items
@@ -38,6 +52,6 @@ def sum_fractions(numer_l, denom_l, numer_r, denom_r):
 
 def main():
 	numerator = find_numerator() #find numerator of Nth convergent
-	#sum digits of numerator
+	print get_sum_of_digits(numerator) #sum digits of numerator
 
 main()
