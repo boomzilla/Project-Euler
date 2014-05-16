@@ -8,27 +8,27 @@ def parse_rom_num(rom_num):
 				to_return += 800
 			else:
 				to_return += 1000
-		if char == "d":
+		elif char == "d":
 			if previous_char == "c":
 				to_return += 300
 			else:
 				to_return += 500
-		if char == "c":
+		elif char == "c":
 			if previous_char == "x":
 				to_return += 80
 			else:
 				to_return += 100
-		if char == "l":
+		elif char == "l":
 			if previous_char == "x":
 				to_return += 30
 			else:
 				to_return += 50
-		if char == "x":
+		elif char == "x":
 			if previous_char == "i":
 				to_return += 8
 			else: 
 				to_return += 10
-		if char == "v":
+		elif char == "v":
 			if previous_char == "i":
 				to_return += 3
 			else:
