@@ -1,3 +1,5 @@
+#solution for Project Euler prompt 89, by Ian Ruotsala
+
 def parse_rom_num(rom_num):
 	rom_num = rom_num.lower()
 	to_return = 0
@@ -40,6 +42,8 @@ def parse_rom_num(rom_num):
 	return to_return
 
 def test():
+	print parse_rom_num("i") #1
+	print parse_rom_num("III") #3
 	print parse_rom_num("V") #5
 	print parse_rom_num("CM") #900
 
