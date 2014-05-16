@@ -46,6 +46,7 @@ def test():
 	print parse_rom_num("III") #3
 	print parse_rom_num("V") #5
 	print parse_rom_num("CM") #900
+	print parse_rom_num("cMMxcix") #1999
 
 def main():
 	test()
