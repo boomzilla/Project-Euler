@@ -4,11 +4,11 @@ def arabic_to_roman(aint):
 
 	thousand_factor = aint / 1000
 	to_return += "M" * thousand_factor
-	aint /= 1000
+	aint %= 1000
 
 	if (aint / 900) > 0:
 		to_return = "CM" + to_return
-	aint /= 900
+	aint %= 900
 
 	return to_return
 
