@@ -1,4 +1,16 @@
 #solution for Project Euler prompt 89, by Ian Ruotsala
+def arabic_to_roman(aint):
+	to_return = ""
+
+	thousand_factor = aint / 1000
+	to_return += "M" * thousand_factor
+	aint /= 1000
+
+	if (aint / 900) > 0:
+		to_return = "CM" + to_return
+	aint /= 900
+
+	return to_return
 
 def parse_rom_num(rom_num):
 	rom_num = rom_num.lower()
@@ -48,6 +60,9 @@ def test():
 	print parse_rom_num("CM") #900
 	print parse_rom_num("cMMxcix") #1999
 
+	print arabic_to_roman(5000) + "= MMMMM?"
+	print arabic_to_roman(4900) + "= CMMMMM?"
+	print arabic_to_roman(900) + "= CM?"
 def main():
 	test()
 
