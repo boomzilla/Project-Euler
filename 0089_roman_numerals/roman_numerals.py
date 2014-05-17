@@ -29,6 +29,27 @@ def arabic_to_roman(aint):
 
 	if (aint / 50) > 0:
 		to_return += "L"
+		aint %= 50
+	elif (aint / 40) > 0:
+		to_return += "XL"
+		aint %= 40
+
+	ten_factor = aint / 10
+	to_return += "X" * ten_factor
+	aint %= 10
+
+	if (aint / 9) > 0:
+		to_return = to_return + "IX"
+		aint %= 9
+
+	if (aint / 5) > 0:
+		to_return += "V"
+		aint %= 5
+	elif (aint / 4) > 0:
+		to_return += "IV"
+		aint %= 4
+
+	to_return += "I" * aint
 
 	return to_return
 
