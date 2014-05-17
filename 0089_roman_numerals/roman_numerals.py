@@ -8,7 +8,27 @@ def arabic_to_roman(aint):
 
 	if (aint / 900) > 0:
 		to_return = "CM" + to_return
-	aint %= 900
+		aint %= 900
+
+	if (aint / 500) > 0:
+		to_return += "D"
+		aint %= 500
+	elif (aint / 400) > 0:
+		to_return += "CD"
+		aint %= 400
+
+	hundred_fator = aint / 100
+	to_return += "C" * hundred_factor
+	aint %= 100
+
+	#this will produce out-of-order subtractrive pairs
+	#however, they will still be of correct length
+	if (aint / 90) > 0:
+		to_return = to_return + "XC"
+		aint %= 90
+
+	if (aint / 50) > 0:
+		to_return += "L"
 
 	return to_return
 
