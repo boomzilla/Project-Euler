@@ -120,10 +120,17 @@ def main():
 	for line in f.readlines():
 		aint = parse_rom_num(line)
 		#print line + " = " + str(aint)
-		non_min_count += len(line)-1 #to eliminate newline from being counted
+		non_min_count += len(line) #to eliminate newline from being counted
+		for char in line:
+			if not char.isalpha():
+				non_min_count -= 1
 		min_count += len(arabic_to_roman(aint))
-		#print (non_min_count - min_count)
-		print len(line)
+		print arabic_to_roman(aint) + " " + str(non_min_count - min_count)
+		#print len(line)
+		#print len(arabic_to_roman(aint))
+		#if not line.isalpha():
+		#	print "non alpha"
 
-	print (non_min_count - min_count + 1) # +1 since last line has no new line...
+	print non_min_count
+	print (non_min_count - min_count) # +1 since last line has no new line...
 main()
