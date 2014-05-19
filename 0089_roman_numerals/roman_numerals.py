@@ -92,25 +92,24 @@ def parse_rom_num(rom_num):
 				to_return += 3
 			else:
 				to_return += 5
-		else:
-			#case char == "i"
+		elif char == "i"i
 			to_return += 1
 		previous_char = char
 	return to_return
 
 def test():
-	print parse_rom_num("i") #1
-	print parse_rom_num("III") #3
-	print parse_rom_num("V") #5
-	print parse_rom_num("CM") #900
-	print parse_rom_num("cMMxcix") #1999
+	#print parse_rom_num("i") #1
+	#print parse_rom_num("III") #3
+	#print parse_rom_num("V") #5
+	#print parse_rom_num("CM") #900
+	#print parse_rom_num("cMMxcix") #1999
 
-	print arabic_to_roman(5000) + "= MMMMM?"
-	print arabic_to_roman(4900) + "= CMMMMM?"
-	print arabic_to_roman(900) + "= CM?"
+	#print arabic_to_roman(5000) + "= MMMMM?"
+	#print arabic_to_roman(4900) + "= CMMMMM?"
+	#print arabic_to_roman(900) + "= CM?"
 
 	#for n in range(2200, 22000, 100):
-	#	print arabic_to_roman(n) + " = " + str(parse_rom_num(arabic_to_roman(n)))
+	#	#print arabic_to_roman(n) + " = " + str(parse_rom_num(arabic_to_roman(n)))
 
 def main():
 	test()
@@ -125,12 +124,12 @@ def main():
 			if not char.isalpha():
 				non_min_count -= 1
 		min_count += len(arabic_to_roman(aint))
-		print arabic_to_roman(aint) + " " + str(non_min_count - min_count)
+		#print arabic_to_roman(aint) + " " + str(aint) + str(non_min_count - min_count)
 		#print len(line)
 		#print len(arabic_to_roman(aint))
 		#if not line.isalpha():
 		#	print "non alpha"
 
-	print non_min_count
-	print (non_min_count - min_count) # +1 since last line has no new line...
+	#print non_min_count
+	print (non_min_count - min_count)
 main()
