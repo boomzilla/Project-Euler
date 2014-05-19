@@ -17,7 +17,7 @@ def arabic_to_roman(aint):
 		to_return += "CD"
 		aint %= 400
 
-	hundred_fator = aint / 100
+	hundred_factor = aint / 100
 	to_return += "C" * hundred_factor
 	aint %= 100
 
