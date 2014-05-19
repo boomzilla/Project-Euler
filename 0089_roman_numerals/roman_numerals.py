@@ -120,10 +120,10 @@ def main():
 	for line in f.readlines():
 		aint = parse_rom_num(line)
 		#print line + " = " + str(aint)
-		non_min_count += len(line)
+		non_min_count += len(line)-1 #to eliminate newline from being counted
 		min_count += len(arabic_to_roman(aint))
 		#print (non_min_count - min_count)
 		print len(line)
 
-	print (non_min_count - min_count)
+	print (non_min_count - min_count + 1) # +1 since last line has no new line...
 main()
