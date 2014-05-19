@@ -1,4 +1,8 @@
 #solution for Project Euler prompt 89, by Ian Ruotsala
+
+PATH = "/home/ian/Documents/prog/projectEuler/0089_roman_numerals/"
+FILE_NAME = "roman.txt"
+
 def arabic_to_roman(aint):
 	to_return = ""
 
@@ -106,5 +110,14 @@ def test():
 	print arabic_to_roman(900) + "= CM?"
 def main():
 	test()
+	f = open(PATH + FILE_NAME, 'r')
+	non_min_count = 0
+	min_count = 0
+	for line in f.readlines():
+		aint = parse_rom_num(line)
+		print line + " = " + str(aint)
+		non_min_count += len(line)
+		min_count += len(arabic_to_roman(aint))
 
+	print (non_min_count - min_count)
 main()
