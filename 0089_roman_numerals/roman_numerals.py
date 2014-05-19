@@ -108,6 +108,10 @@ def test():
 	print arabic_to_roman(5000) + "= MMMMM?"
 	print arabic_to_roman(4900) + "= CMMMMM?"
 	print arabic_to_roman(900) + "= CM?"
+
+	#for n in range(2200, 22000, 100):
+	#	print arabic_to_roman(n) + " = " + str(parse_rom_num(arabic_to_roman(n)))
+
 def main():
 	test()
 	f = open(PATH + FILE_NAME, 'r')
@@ -115,9 +119,11 @@ def main():
 	min_count = 0
 	for line in f.readlines():
 		aint = parse_rom_num(line)
-		print line + " = " + str(aint)
+		#print line + " = " + str(aint)
 		non_min_count += len(line)
 		min_count += len(arabic_to_roman(aint))
+		#print (non_min_count - min_count)
+		print len(line)
 
 	print (non_min_count - min_count)
 main()
