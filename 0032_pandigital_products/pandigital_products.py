@@ -45,12 +45,17 @@ def main():
 		if potential_pandigital(n):
 			mp.append(n)
 	sum = 0
-	for m in range(len(mp)):
+	for m in range(len(mp)-1, -1, -1):
 		print mp[m]
-		for n in range(m+1, len(mp)):
-			product = mp[m] * mp[n]
-			if is_pandigital(mp[m],mp[n],product):
+		n = m-1
+		divisor = mp[n]
+		quotient = -1
+		while (divisor > quotient):	
+			quotient = mp[m] / divisor
+			if is_pandigital(mp[m],divisor,quotient):
 				sum += product
+			n -= 1
+			divisor = mp[n]
 	print sum
 
 main()
